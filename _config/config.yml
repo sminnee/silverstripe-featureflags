@@ -1,0 +1,6 @@
+---
+name: featureflags
+---
+SilverStripe\FeatureFlags\FeatureFlagAdmin:
+  context_field_providers:
+    SilverStripe\Security\Member: SilverStripe\FeatureFlags\Context\MemberFieldProvider
