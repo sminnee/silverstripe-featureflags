@@ -27,7 +27,7 @@ class FeatureFlagChecker implements FeatureFlagCheckable
         foreach ($context as $key => $obj) {
             $contextTest = $feature->Items()->filter([
                 'ContextKey' => $key,
-                'ContextID' => $obj->ID,
+                'ContextID' => $obj ? $obj->ID : 0,
             ]);
 
             // Any context match will result in the feature being enabled
