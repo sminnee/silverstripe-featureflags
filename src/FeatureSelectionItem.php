@@ -1,9 +1,5 @@
 <?php
 
-namespace SilverStripe\FeatureFlags;
-
-use SilverStripe\ORM\DataObject;
-
 class FeatureSelectionItem extends DataObject
 {
     private static $db = [

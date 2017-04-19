@@ -2,7 +2,7 @@
 
 namespace SilverStripe\FeatureFlags\GridField;
 
-use SilverStripe\Forms\GridField\GridFieldDetailForm_ItemRequest;
+use GridFieldDetailForm_ItemRequest;
 
 /**
  * Subclass of GridFieldDetailForm_ItemRequest to override the save handler.
@@ -10,10 +10,9 @@ use SilverStripe\Forms\GridField\GridFieldDetailForm_ItemRequest;
  */
 class FeatureContextItem extends GridFieldDetailForm_ItemRequest
 {
-    public function saveFormIntoRecord($data, $form)
+    public function doSave($data, $form)
     {
-        $record = parent::saveFormIntoRecord($data, $form);
-
-        $record->saveContextFromForm($form);
+        parent::doSave($data, $form);
+        $this->record->saveContextFromForm($form);
     }
 }

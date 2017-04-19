@@ -2,6 +2,8 @@
 
 namespace SilverStripe\FeatureFlags;
 
+use FeatureSelection;
+
 /**
  * Default implementation fo FeatureFlagCheckable.
  * Uses the FeatureSelection / FeatureSelectionItem data objects

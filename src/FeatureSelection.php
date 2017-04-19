@@ -1,17 +1,7 @@
 <?php
 
-namespace SilverStripe\FeatureFlags;
-
 use SilverStripe\FeatureFlags\Context\FieldProvider;
-
-use SilverStripe\ORM\DataObject;
-use SilverStripe\ORM\DB;
-use SilverStripe\Forms\Form;
-use SilverStripe\Forms\FieldList;
-use SilverStripe\Forms\ReadonlyField;
-use SilverStripe\Forms\CheckboxSetField;
-use SilverStripe\Security\Member;
-use SilverStripe\Core\Config\Config;
+use SilverStripe\FeatureFlags\FeatureFlag;
 
 class FeatureSelection extends DataObject
 {

@@ -1,11 +1,6 @@
 <?php
 
-namespace SilverStripe\FeatureFlags;
-
 use SilverStripe\FeatureFlags\GridField\FeatureContextItem;
-
-use SilverStripe\Admin\ModelAdmin;
-use SilverStripe\Forms\GridField\GridFieldDetailForm;
 
 class FeatureFlagAdmin extends ModelAdmin
 {
@@ -21,7 +16,7 @@ class FeatureFlagAdmin extends ModelAdmin
     {
         $form = parent::getEditForm($id, $fields);
 
-        if ($gridField = $form->Fields()->dataFieldByName('SilverStripe-FeatureFlags-FeatureSelection')) {
+        if ($gridField = $form->Fields()->dataFieldByName('FeatureSelection')) {
             $gridField->getConfig()
                 ->getComponentByType(GridFieldDetailForm::class)
                 ->setItemRequestClass(FeatureContextItem::class);

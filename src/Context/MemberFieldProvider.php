@@ -2,12 +2,12 @@
 
 namespace SilverStripe\FeatureFlags\Context;
 
-use SilverStripe\ORM\DataObject;
-use SilverStripe\ORM\DB;
-use SilverStripe\Forms\ReadonlyField;
-use SilverStripe\Forms\CheckboxSetField;
-use SilverStripe\Forms\FieldList;
-use SilverStripe\Security\Member as MemberData;
+use DataObject;
+use DB;
+use ReadonlyField;
+use CheckboxSetField;
+use FieldList;
+use Member;
 
 class MemberFieldProvider implements FieldProvider
 {
@@ -27,7 +27,7 @@ class MemberFieldProvider implements FieldProvider
     public function getCMSFields()
     {
         return new FieldList(
-            new CheckboxSetField($this->key, $this->key, MemberData::get())
+            new CheckboxSetField($this->key, $this->key, Member::get())
         );
     }
 

@@ -2,8 +2,8 @@
 
 namespace SilverStripe\FeatureFlags;
 
-use SilverStripe\Core\Injector\Injector;
-use SilverStripe\Core\Config\Config;
+use Injector;
+use Config;
 
 /**
  * Class for interacting with the available feature flags
