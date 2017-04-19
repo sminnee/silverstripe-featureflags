@@ -72,6 +72,8 @@ Each feature have the following options:
 Your CMS UI will have a new section, `/admin/featureflags`. This is a simple modeladmin that lists each available
 feature and gives you some form controls for choosing which context values will result in an enabled feature.
 
+![screenshot](docs/images/feature-flag-admin.png)
+
 ### Context field providers
 
 For each data type in the context, you will need to have a form control for editing it. These are provided by
