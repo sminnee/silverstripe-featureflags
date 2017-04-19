@@ -10,7 +10,7 @@
         }
     ],
     "require": {
-      "silverstripe/framework": "^4.0.0-alpha6",
+      "silverstripe/framework": "^4.0.0-alpha6"
     },
     "extra": {
       "branch-alias": {
