@@ -9,7 +9,14 @@
             "email": "sam@silverstripe.com"
         }
     ],
-    "require": {},
+    "require": {
+      "silverstripe/framework": "^4.0.0-alpha6",
+    },
+    "extra": {
+      "branch-alias": {
+        "dev-master": "0.2.x-dev"
+      }
+    },
     "autoload": {
       "psr-4": {
         "SilverStripe\\FeatureFlags\\": "src/"
