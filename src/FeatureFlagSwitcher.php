@@ -16,6 +16,9 @@ class FeatureFlagSwitcher implements FeatureFlagSwitchable
         }
 
         foreach ($context as $key => $obj) {
+            $count = FeatureSelectionItem::get()->filter('ContextKey', $key)->filter('ContextID', $obj->ID)->count();
+            if ($count) continue;
+
             $item = new FeatureSelectionItem();
             $item->ContextKey = $key;
             $item->ContextID = $obj->ID;

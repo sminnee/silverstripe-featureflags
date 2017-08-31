@@ -156,6 +156,9 @@ class FeatureSelection extends DataObject
             if (self::get()->filter([ 'Code' => $code ])->count() === 0) {
                 $selection = new FeatureSelection;
                 $selection->Code = $code;
+                if (isset($feature['default_enable_mode'])) {
+                    $selection->EnableMode = $feature['default_enable_mode'];
+                }
                 $selection->write();
                 DB::alteration_message('Adding feature "' . $code . '"', 'changed');
             }

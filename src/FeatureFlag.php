@@ -2,8 +2,6 @@
 
 namespace SilverStripe\FeatureFlags;
 
-use FeatureSelection;
-use FeatureSelectionItem;
 use Injector;
 use Config;
 
@@ -18,11 +16,25 @@ class FeatureFlag
         return Injector::inst()->get(FeatureFlagChecker::class)->isEnabled($code, $context);
     }
 
+    /**
+     * Enables the feature flag by writing it to durable storage. Persists across requests.
+     *
+     * @param $code
+     * @param $context
+     * @return mixed
+     */
     public static function enable($code, $context)
     {
         return Injector::inst()->get(FeatureFlagSwitcher::class)->enable($code, $context);
     }
 
+    /**
+     * Disables the feature flag by writing it to durable storage. Persists across requests.
+     *
+     * @param $code
+     * @param $context
+     * @return mixed
+     */
     public static function disable($code, $context)
     {
         return Injector::inst()->get(FeatureFlagSwitcher::class)->disable($code, $context);

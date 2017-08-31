@@ -66,6 +66,10 @@ Each feature have the following options:
  * **context:** This is a map of the required context values. The keys are the context keys, and the values are
    the class or interface that the value passed must derive from. Scalar context is not allowed. Any context values
    specified here that are not passed to `FeatureFlag::isEnabled()` will result in an error.
+ 
+Additionally, the following options are available when using the default `FeatureSelection` flag backend:
+
+ * **default_enable_mode:** Sets the starting mode for the feature flag (valid values: On/Off/Partial)
 
 ### Feature admin
 
@@ -94,3 +98,20 @@ SilverStripe\FeatureFlags\FeatureFlagAdmin:
 
  * The key should be the context class that you wish to use the field provider with
  * The value should be the class name of the field provider
+ 
+### Enabling flags programmatically
+
+As an alternative to changing the flag through the admin interface, a flag can also be changed programmatically by
+calling `FeatureFlag::enable` and `FeatureFlag::disable`.
+ 
+For example here is how to ensure all newly created Members come with a feature flag enabled:
+
+```php
+public function onAfterWrite()
+{
+    parent::onAfterWrite();
+    if ($this->original['ID'] == 0) {
+        FeatureFlag::enable('MY_EXCELLENT_FEATURE', ['Member' => $this]);
+    }
+}
+```
