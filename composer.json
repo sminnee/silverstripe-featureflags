@@ -1,7 +1,7 @@
 {
     "name": "silverstripe/featureflags",
     "description": "An experimental module for allowing admin-controlled feature flags in a SilverStripe app",
-    "type": "silverstripe-module",
+    "type": "silverstripe-vendormodule",
     "license": "BSD-3-Clause",
     "authors": [
         {
