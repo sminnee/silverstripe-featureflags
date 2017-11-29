@@ -10,10 +10,12 @@ use FeatureSelection;
  */
 class FeatureFlagChecker implements FeatureFlagCheckable
 {
-
     public static function isEnabled($code, $context)
     {
-        $feature = FeatureSelection::get()->filter([ 'Code' => $code ])->first();
+        $feature = FeatureSelection::get()->filter('Code', $code)->first();
+        if (!$feature || !$feature->exists()) {
+            return false;
+        }
 
         // Simple modes
         if ($feature->EnableMode === 'On') {
